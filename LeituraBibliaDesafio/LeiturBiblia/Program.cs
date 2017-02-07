@@ -10,7 +10,9 @@ namespace LeiturBiblia
     {
         static void Main(string[] args)
         {
-            ManipuladorArquivo.LerBiblia();
+            string livro;
+            int capitulo, versiculo;
+            ManipuladorArquivo.LerBiblia(livro,capitulo,versiculo);
         }
     }
 }
