@@ -20,12 +20,6 @@ namespace LeiturBiblia
                     while (leitor.Peek() >= 0)
                     {
                         Console.WriteLine(leitor.ReadLine());
-                        int i = 0;
-                        if (i == 10)
-                        {
-                            break;
-                        }
-                        i++;
                     }
                 }
             }
