@@ -16,9 +16,13 @@ namespace LeiturBiblia
             string frase;
             bool acheiLivro = false;
             bool acheiCapitulo = false;
+
+
             if (File.Exists(EnderecoArquivo))
+
             {
-                using (StreamReader leitor = File.OpenText(EnderecoArquivo))
+                StreamReader leitor = new StreamReader(EnderecoArquivo, Encoding.GetEncoding("iso-8859-1"));
+                using (leitor = File.OpenText(EnderecoArquivo))
                 {
                     while (leitor.Peek() >= 0)
                     {

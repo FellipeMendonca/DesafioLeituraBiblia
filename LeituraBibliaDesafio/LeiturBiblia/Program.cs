@@ -14,9 +14,9 @@ namespace LeiturBiblia
 
             string capitulo;
             livro = "EXODO";
-            capitulo = "3" + "-";
+            capitulo = livro + " [" + "3" + "]";
             versiculo = "10";
-            ManipuladorArquivo.LerBiblia(livro.ToUpper(),capitulo,versiculo);
+            ManipuladorArquivo.LerBiblia(livro.ToUpper(), capitulo, versiculo);
             Console.ReadKey();
         }
     }
