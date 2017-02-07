@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace LeituraiBibliaDesafio
+namespace LeiturBiblia
 {
-    public class ManipuladorArquivos
+    class ManipuladorArquivo
     {
         private static string EnderecoArquivo = AppDomain.CurrentDomain.BaseDirectory + "Bíblia Sagrada.txt";
 
@@ -17,7 +17,7 @@ namespace LeituraiBibliaDesafio
             {
                 using (StreamReader leitor = File.OpenText(EnderecoArquivo))
                 {
-                    while (leitor.Peek() >=0)
+                    while (leitor.Peek() >= 0)
                     {
                         Console.WriteLine(leitor.ReadLine());
                         int i = 0;
