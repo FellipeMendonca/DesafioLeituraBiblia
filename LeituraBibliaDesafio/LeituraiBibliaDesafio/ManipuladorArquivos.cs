@@ -9,6 +9,7 @@ namespace LeituraiBibliaDesafio
 {
     public class ManipuladorArquivos
     {
+        private static string EnderecoArquivo = AppDomain.CurrentDomain.BaseDirectory + "Bíblia Sagrada.txt";
         StreamReader leitor = new StreamReader;
     }
 }
