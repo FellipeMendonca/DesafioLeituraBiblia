@@ -11,17 +11,40 @@ namespace LeiturBiblia
     {
         private static string EnderecoArquivo = AppDomain.CurrentDomain.BaseDirectory + "Biblia.txt";
 
-        public static void LerBiblia(string livro, int capitulo, int versiculo)
+        public static void LerBiblia(string livro, string capitulo, string versiculo)
         {
+            string frase;
+            bool acheiLivro = false;
+            bool acheiCapitulo = false;
             if (File.Exists(EnderecoArquivo))
             {
                 using (StreamReader leitor = File.OpenText(EnderecoArquivo))
                 {
                     while (leitor.Peek() >= 0)
                     {
-                        Console.WriteLine(leitor.ReadLine());
+                        frase = leitor.ReadLine();
+                        if (frase != "")
+                        {
+                            if (frase.Contains(livro))
+                            {
+                                Console.WriteLine("Livro: {0}", frase);
+                                Console.ReadKey();
+                                acheiLivro = true;
 
-                        Console.ReadKey();
+                            }
+                            if (frase.Contains(capitulo) && acheiLivro)
+                            {
+                                Console.WriteLine("Capitulo: {0}", frase);
+                                Console.ReadKey();
+                                acheiCapitulo = true;
+                            }
+                            if (frase.Contains(versiculo) && acheiLivro && acheiCapitulo)
+                            {
+                                Console.WriteLine("Versiculo: {0}", frase);
+                                Console.ReadKey();
+                                break;
+                            }
+                        }
                     }
                 }
             }

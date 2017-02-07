@@ -10,9 +10,14 @@ namespace LeiturBiblia
     {
         static void Main(string[] args)
         {
-            string livro;
-            int capitulo, versiculo;
-            ManipuladorArquivo.LerBiblia(livro,capitulo,versiculo);
+            string livro, versiculo;
+
+            string capitulo;
+            livro = "EXODO";
+            capitulo = "3" + "-";
+            versiculo = "10";
+            ManipuladorArquivo.LerBiblia(livro.ToUpper(),capitulo,versiculo);
+            Console.ReadKey();
         }
     }
 }
