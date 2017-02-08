@@ -13,10 +13,10 @@ namespace LeiturBiblia
             string livro, versiculo;
 
             string capitulo;
-            livro = "EXODO";
-            capitulo = livro + " [" + "3" + "]";
+            livro = "apocalipse";
+            capitulo = livro + " [" + "12" + "]";
             versiculo = "10";
-            ManipuladorArquivo.LerBiblia(livro.ToUpper(), capitulo, versiculo);
+            ManipuladorArquivo.LerBiblia(livro.ToUpper(), capitulo.ToUpper(), versiculo);
             Console.ReadKey();
         }
     }

@@ -19,24 +19,21 @@ namespace LeiturBiblia
 
 
             if (File.Exists(EnderecoArquivo))
-
             {
-                StreamReader leitor = new StreamReader(EnderecoArquivo, Encoding.GetEncoding("iso-8859-1"));
-                using (leitor = File.OpenText(EnderecoArquivo))
+                using (StreamReader leitor = File.OpenText(EnderecoArquivo))
                 {
                     while (leitor.Peek() >= 0)
                     {
-                        frase = leitor.ReadLine();
+                        frase = leitor.ReadLine() ;
                         if (frase != "")
                         {
-                            if (frase.Contains(livro))
+                            if (frase == livro)
                             {
                                 Console.WriteLine("Livro: {0}", frase);
                                 Console.ReadKey();
                                 acheiLivro = true;
-
                             }
-                            if (frase.Contains(capitulo) && acheiLivro)
+                            if (frase == capitulo && acheiLivro)
                             {
                                 Console.WriteLine("Capitulo: {0}", frase);
                                 Console.ReadKey();
