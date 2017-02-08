@@ -10,14 +10,26 @@ namespace LeiturBiblia
     {
         static void Main(string[] args)
         {
-            string livro, versiculo;
-
-            string capitulo;
-            livro = "apocalipse";
-            capitulo = livro + " [" + "12" + "]";
-            versiculo = "10";
-            ManipuladorArquivo.LerBiblia(livro.ToUpper(), capitulo.ToUpper(), versiculo);
-            Console.ReadKey();
+            string livro, versiculo, capitulo;
+            string resp;
+            do
+            {
+                Console.WriteLine("Encontre o versículo bíblico desejado!");
+                Console.WriteLine("Informe o livro: ");
+                livro = Console.ReadLine();
+                Console.WriteLine("Informe o capítulo:");
+                capitulo = livro + " [" + Console.ReadLine() + "]";
+                Console.WriteLine("Informe o versículo:");
+                versiculo = Console.ReadLine();
+                ManipuladorArquivo.LerBiblia(livro.ToUpper(), capitulo.ToUpper(), versiculo);
+                Console.WriteLine("Deseja continuar?informe a respectiva letra: Sim(S) ou Não(N)?");
+                resp = Console.ReadLine().ToUpper();
+                if(resp == "N")
+                {
+                    Console.WriteLine("Finalizano programa!!");
+                    break;
+                }
+            } while (true);
         }
     }
 }

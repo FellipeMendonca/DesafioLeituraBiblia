@@ -9,14 +9,14 @@ namespace LeiturBiblia
 {
     class ManipuladorArquivo
     {
-        private static string EnderecoArquivo = AppDomain.CurrentDomain.BaseDirectory + "Biblia.txt";
+        private static string EnderecoArquivo = AppDomain.CurrentDomain.BaseDirectory + "Biblia.txt";               
 
         public static void LerBiblia(string livro, string capitulo, string versiculo)
         {
             string frase;
             bool acheiLivro = false;
             bool acheiCapitulo = false;
-
+            bool acheiVersiculo = false;
 
             if (File.Exists(EnderecoArquivo))
             {
@@ -24,7 +24,7 @@ namespace LeiturBiblia
                 {
                     while (leitor.Peek() >= 0)
                     {
-                        frase = leitor.ReadLine() ;
+                        frase = leitor.ReadLine();
                         if (frase != "")
                         {
                             if (frase == livro)
@@ -43,9 +43,15 @@ namespace LeiturBiblia
                             {
                                 Console.WriteLine("Versiculo: {0}", frase);
                                 Console.ReadKey();
+                                acheiVersiculo = true;
                                 break;
                             }
                         }
+                    }
+                    if (!acheiCapitulo || !acheiLivro || !acheiVersiculo)
+                    {
+                        Console.WriteLine("Não foi possivel achar o versiculo desejado!\n\n");
+                        Console.ReadKey();
                     }
                 }
             }
